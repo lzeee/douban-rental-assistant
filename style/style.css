@@ -1,0 +1,9 @@
+#filter-menu {
+	position: fixed;
+	top: 20%;
+	left: 5px;
+	width: 150px;
+	background-color: #f8f8f8;
+	padding: 15px;
+	z-index: 1000;
+}
