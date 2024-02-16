@@ -1,12 +1,13 @@
 # 豆瓣租房帖筛选插件
 
 ## 功能演示
-<img src="README-images/plugin-site.gif" alt="Example GIF" width="600" height="400">
+<img src="README-images/plugin-site.gif" alt="Example GIF" width="800" height="400">
 
 ## 如何安装并使用？
-1. 下载插件压缩包
+1. 下载插件压缩包 ->
 
 2. Chrome浏览器安装插件
+
 
 3. 关注感兴趣的租房小组
 
