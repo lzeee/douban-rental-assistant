@@ -1,0 +1,14 @@
+#filter-menu {
+	position: fixed;
+	top: 20%;
+	left: 100px;
+	width: 200px;
+	background-color: #f0f6f3;
+	padding: 15px;
+	z-index: 1000;
+	border-radius: 15px;
+}
+
+.filter-section div {
+    margin-bottom: 10px;
+}

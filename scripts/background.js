@@ -1,24 +1,26 @@
-// 在插件图标上标明插件是否启动
-chrome.runtime.onInstalled.addListener(() => {
-  chrome.action.setBadgeText({
-    text: "off",
-  });
+const targetUrl = 'https://www.douban.com/group'
+const topicUrl = 'https://www.douban.com/group/topic/'
+
+function checkTargetPage(url) {
+  // 只影响到豆瓣网站下的“我的小组讨论”页面，根据情况调整badge颜色
+  console.log(url);
+  if (url && url.startsWith(targetUrl) && !url.startsWith(topicUrl)) {
+    chrome.action.setIcon({ path: '/images/icon-color.png' });
+  } else {
+    chrome.action.setIcon({ path: '/images/icon-grey.png' })
+  }
+}
+
+chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
+  if (changeInfo.status === 'complete' && tab.active) {
+    const currentUrl = tab.url;
+    checkTargetPage(currentUrl);
+  }
 });
 
-// 只影响豆瓣的“我的小组讨论”页面
-const targetUrl = 'https://www.douban.com/group'
-
-chrome.action.onClicked.addListener(async (tab) => {
-  if (tab.url.startsWith(targetUrl)) {
-    // 确定
-    const prevState = await chrome.action.getBadgeText({ tabId: tab.id });
-    // Next state will always be the opposite
-    const nextState = prevState === 'on' ? 'off' : 'on'
-
-    // Set the action badge to the next state
-    await chrome.action.setBadgeText({
-      tabId: tab.id,
-      text: nextState,
-    });
-  }
+chrome.tabs.onActivated.addListener((activeInfo) => {
+  chrome.tabs.get(activeInfo.tabId, (tab) => {
+    const currentUrl = tab.url;
+    checkTargetPage(currentUrl);
+  });
 });

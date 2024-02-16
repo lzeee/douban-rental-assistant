@@ -1,25 +1,25 @@
 {
   "manifest_version": 3,
   "name": "豆瓣租房助手",
-  "description": "帮助租客更便捷地筛选、浏览豆瓣小组的帖子。希望漂泊在外的你我，都能寻得一处安身之所。",
+  "description": "帮助你更便捷地筛选、浏览豆瓣小组下的帖子。希望漂泊在外的你我，都能寻得一处安身之所。",
   "version": "1",
   "icons": {
-    "128": "images/icon-128.png"
+    "128": "images/icon-color.png"
   },
   "content_scripts": [{
 	  "js":["scripts/content.js"],
 	  "matches":["https://www.douban.com/group/*"],
-	  "css": ["style/style.css"]
+	  "exclude_matches": ["https://www.douban.com/group/topic/*"],
+	  "css": ["style/menu.css"]
   }],
   "background": {
     "service_worker": "scripts/background.js"
   },
   "action": {
-	 "default_icon": {
-      "128": "images/icon-128.png"
-    }
+	 "default_icon": "images/icon-grey.png",
+	 "default_title": "豆瓣租房助手"
   },
-  "permissions": ["activeTab", "scripting"],
-  "minimum_chrome_version": "102"
-
+  "permissions": ["activeTab", "scripting", "tabs", "storage"],
+  "minimum_chrome_version": "102",
+  "homepage_url": "https://www.baidu.com"
 }
