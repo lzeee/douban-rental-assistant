@@ -4,9 +4,9 @@
 <img src="README-images/plugin-site.gif" alt="Example GIF" width="600" height="400">
 
 ## 如何安装并使用？
-* 下载本插件的[最新版本](https://github.com/lzeee/douban-rental-assistant/releases/tag/stable)并解压到文件夹中
+1. 下载本插件的[最新版本](https://github.com/lzeee/douban-rental-assistant/releases/tag/stable)并解压到文件夹中
 
-* Chrome浏览器安装插件，访问地址：chrome://extensions，打开“开发者模式”，从刚解压的文件夹中加载插件
+2. Chrome浏览器安装插件，访问地址：chrome://extensions，打开“开发者模式”，从刚解压的文件夹中加载插件
 
 <img src="README-images/install.png" alt="Example GIF" width="600">
 
